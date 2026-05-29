@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showroom Interactivo | Agropower Premium</title>
+    <link rel="icon" type="image/png" href="Img/isotipo - Blanco (Diapo Negativo).png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="tractor-stage">
+                <div class="moving-tractor"><i data-lucide="tractor" size="56"></i></div>
+                <div class="field-floor"></div>
+            </div>
+            <div class="loading-bar-container"><div class="loading-bar-progress"></div></div>
+            <p class="loading-text">Cargando Potencia...</p>
+        </div>
+    </div>
+    <nav id="main-nav">
+        <a href="index.html#inicio" class="logo-container">
+            <img src="Img/Isotipo - Blanco (Diapo Negativo).png" alt="Logo Agropower" class="logo-img">
+            <span class="logo-text">Agro<span>power</span></span>
+        </a>
+        <div class="nav-content">
+            <button class="menu-icon" id="menu-toggle"><i data-lucide="menu" size="30"></i></button>
+            <ul id="nav-list">
+                <li><a href="catalogos.html" class="active">Productos</a></li> 
+                <li><a href="financiamiento.html">Financiamiento</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+<main class="showroom-wrapper">
+        <div class="agro-grid-overlay"></div>
+        <div id="showcase-bg" class="ambient-glow"></div>
+        
+        <div class="showroom-container">
+            <div class="product-display">
+                <div class="image-area">
+                    <span id="product-badge" class="hp-badge">130 HP</span>
+                    <img id="product-img" src="Img/Tractor 1304C Difuminado.png" alt="Tractor Agropower" class="main-tractor-img">
+                </div>
+
+                <div class="details-area">
+                    <div class="info-header">
+                        <span id="product-tag" class="tag-line">Fuerza Bruta Premium</span>
+                        <h1 id="product-title">Agropower TE-1304C</h1>
+                        <div class="price-container">
+                            <span class="price-label">Precio Sugerido</span>
+                            <h2 id="product-price">$56.068</h2>
+                        </div>
+                    </div>
+
+                    <div id="specs-container" class="specs-grid"></div>
+
+                    <div class="action-area">
+                        <a id="quote-button" href="https://wa.me/584228331171" class="btn btn-primary-gold" target="_blank">
+                            <i data-lucide="message-circle"></i> Solicitar Cotización Asistida
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-selector">
+                <button onclick="handleUserSelect(0)" class="nav-dot active"><span>TE-1304C</span></button>
+                <button onclick="handleUserSelect(1)" class="nav-dot"><span>TE-1304F</span></button>
+                <button onclick="handleUserSelect(2)" class="nav-dot"><span>TE-904F</span></button>
+                <button onclick="handleUserSelect(3)" class="nav-dot"><span>TE-504F</span></button>
+            </div>
+        </div>
+
+        <div class="agro-divider"></div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <img src="Img/Isotipo - Blanco (Diapo Negativo).png" alt="Agropower Premium" class="footer-logo">
+                    <span class="logo-text">Agro<span>power</span></span>
+                </div>
+                <p class="brand-pitch">Tecnología de potencia y rendimiento avanzado para la productividad del campo venezolano.</p>
+            </div>
+            
+            <div class="footer-contact-card">
+                <h3>Sede Principal</h3>
+                <div class="contact-item">
+                    <i data-lucide="map-pin"></i>
+                    <span>Avenida Alirio Ugarte Pelayo, Maturín, Monagas.</span>
+                </div>
+                <div class="contact-item">
+                    <i data-lucide="phone"></i>
+                    <span>+58 422-8331171</span>
+                </div>
+                <div class="contact-item">
+                    <i data-lucide="mail"></i>
+                    <span>ventas@agropower.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copy">© 2026 Agropower C.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+        </div>
+    
+    </main>
+    <script>
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('loading-screen');
+            // Agrega un desvanecimiento suave antes de ocultarlo por completo
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 800); // Mantiene el loader visible un instante corto por elegancia
+        });
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/script2.js"></script>
+</body>
+</html>

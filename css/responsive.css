@@ -1,0 +1,243 @@
+/* ==========================================================================
+   AGROPOWER: NUEVA PANTALLA DE CARGA (TRACTOR LABRANDO EL CAMPO)
+   ========================================================================== */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0c0c0c !important; /* Forzamos fondo premium ultra oscuro */
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-content {
+    width: 280px;
+    text-align: center;
+}
+
+.tractor-stage {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+/* El tractor avanza de izquierda a derecha y vibra imitando un motor encendido */
+.moving-tractor {
+    position: absolute;
+    bottom: 6px;
+    left: -60px;
+    color: var(--amarillo-agropower); /* Usa tu amarillo corporativo */
+    animation: 
+        driveAcross 2.8s linear infinite,
+        tractorVibrate 0.2s ease-in-out infinite alternate;
+}
+
+/* Línea del suelo del campo labrado */
+.field-floor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 80%, transparent);
+    border-radius: 2px;
+}
+
+.loading-bar-container {
+    width: 100%;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 0 auto 15px auto;
+}
+
+/* La barra verde de progreso se llena sincronizada con el viaje del tractor */
+.loading-bar-progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--verde-principal), #00ffcc) !important;
+    border-radius: 3px;
+    animation: fillProgress 2.8s ease-in-out infinite !important;
+}
+
+.loader-content p, .loading-text {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--blanco) !important;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+/* Controladores de las animaciones por fotogramas */
+@keyframes driveAcross {
+    0% { left: -60px; }
+    100% { left: 100%; }
+}
+@keyframes tractorVibrate {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-3px) rotate(1deg); }
+}
+@keyframes fillProgress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* ==========================================================================
+   BLOQUE DE OPTIMIZACIÓN RESPONSIVA (MÓVILES PREMIUM - RE-ORGANIZACIÓN VISUAL)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+        text-align: center;
+        margin-bottom: 25px !important;
+    }
+
+    /* --- MENÚ DE NAVEGACIÓN MÓVIL DESPLEGABLE --- */
+    .menu-toggle {
+        display: block !important; /* Forzamos visualización del botón hamburguesa */
+        z-index: 1001;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: rgba(16, 16, 16, 0.98) !important; /* Mismo fondo oscuro elegante */
+        backdrop-filter: blur(15px);
+        flex-direction: column !important;
+        justify-content: flex-start;
+        padding-top: 50px;
+        margin: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 3px solid var(--amarillo-agropower);
+        transform: translateX(-100%);
+        transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .nav-list.show {
+        transform: translateX(0); /* Desplazamiento fluido */
+    }
+
+    .nav-list li {
+        margin: 20px 0 !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        font-size: 18px !important;
+        display: inline-block;
+        padding: 10px 30px;
+    }
+
+    /* --- REORGANIZACIÓN SIMÉTRICA DE FILAS A COLUMNAS APILADAS --- */
+    .hero-container, 
+    .valores-container, 
+    .financiamiento-intro,
+    .contacto-container,
+    .section-split {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 40px 20px !important;
+        gap: 30px !important;
+    }
+
+    .hero-text, .hero-image,
+    .valores-text, .valores-image,
+    .contacto-info, .contacto-form-box {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* --- AJUSTE GLOBAL DE BOTONES --- */
+    .btn-primary, .btn-secondary, .cta-button {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        width: 100% !important;
+        max-width: 290px !important;
+        margin: 10px auto !important;
+        padding: 14px 24px !important;
+        font-size: 15px !important;
+    }
+
+    /* --- RE-DISEÑO DE FILAS DE PRODUCTOS Y VALORES EN REJILLA --- */
+    .productos-grid, 
+    .catalogos-grid,
+    .valores-grid,
+    .features-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+        gap: 25px !important;
+        padding: 15px !important;
+    }
+
+    .producto-card, .catalogo-card {
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 340px;
+    }
+
+    .producto-card img, 
+    .catalogo-card img {
+        width: 100% !important;
+        height: 210px !important;
+        object-fit: cover !important; /* Evita que las imágenes de tractores se deformen */
+    }
+}
+
+/* ==========================================================================
+   ADAPTACIÓN ADICIONAL EXCLUSIVA DEL CUESTIONARIO MÓVIL
+   ========================================================================== */
+@media (max-width: 600px) {
+    .quiz-container {
+        padding: 25px 15px !important;
+        margin: 20px auto !important;
+        border-radius: 12px !important;
+    }
+
+    .options-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100%;
+    }
+
+    .option-btn {
+        width: 100% !important;
+        padding: 18px 20px !important;
+        flex-direction: row !important; /* Mantiene la distribución horizontal limpia de la versión web */
+        justify-content: flex-start !important;
+        align-items: center !important;
+        gap: 15px !important;
+        text-align: left !important;
+        font-size: 15px !important;
+        border-radius: 8px !important;
+    }
+
+    .option-btn i {
+        width: 24px !important;
+        height: 24px !important;
+        flex-shrink: 0;
+    }
+}

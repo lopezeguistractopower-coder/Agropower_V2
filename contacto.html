@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con Agropower C.A. — Solicita cotizaciones de tractores y maquinaria agrícola de alta potencia. Atención premium y soporte técnico.">
+    <meta name="theme-color" content="#0c0c0c">
+    <title>Contacto Oficial | Agropower Premium</title>
+    <link rel="icon" type="image/png" href="Img/isotipo - Blanco (Diapo Negativo).png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .contacto-page-main {
+            padding-top: 110px; /* Espacio para que la barra de navegación fija no pise el título */
+            background-color: var(--gris-luz);
+            min-height: calc(100vh - 70px);
+        }
+
+        .contacto-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding: 40px 25px 80px;
+        }
+
+        .form-card {
+            background-color: var(--blanco);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .form-card h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--negro);
+        }
+
+        .form-subtitle {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--negro);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: var(--negro);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--amarillo-agropower);
+        }
+
+        select.form-control {
+            cursor: pointer;
+            background-color: var(--blanco);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Columna informativa de contacto */
+        .info-contacto-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 20px;
+        }
+
+        .info-contacto-col h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .info-contacto-col h2 span {
+            color: var(--verde-principal);
+        }
+
+        .contacto-desc {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .canales-directos {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 45px;
+        }
+
+        .canal-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: var(--blanco);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .canal-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .canal-text h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: #777;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .canal-text p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--negro);
+        }
+
+        .canal-text a {
+            color: var(--negro);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .canal-text a:hover {
+            color: var(--verde-principal);
+        }
+
+        /* Responsivo */
+        @media (max-width: 992px) {
+            .contacto-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding-bottom: 50px;
+            }
+
+            .info-contacto-col {
+                order: -1; /* Muestra la info arriba en móviles */
+            }
+
+            .info-contacto-col h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="loading-screen">
+        <div class="loader-content">
+            <div class="tractor-stage">
+                <div class="moving-tractor">
+                    <i data-lucide="tractor" size="56"></i>
+                </div>
+                <div class="field-floor"></div>
+            </div>
+            
+            <div class="loading-bar-container">
+                <div class="loading-bar-progress"></div>
+            </div>
+            <p class="loading-text">Preparando la potencia...</p>
+        </div>
+    </div>
+
+    <a class="skip-link" href="#contacto-form-section">Saltar al formulario de contacto</a>
+
+    <nav id="main-nav">
+        <a href="index.html#inicio" class="logo-container">
+            <img src="Img/Isotipo - Blanco (Diapo Negativo).png" alt="Logo Agropower" class="logo-img">
+            <span class="logo-text">Agro<span>power</span></span>
+        </a>
+        
+        <div class="nav-content">
+            <button class="menu-icon" id="menu-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Abrir menú">
+                <i data-lucide="menu" size="30"></i>
+            </button>
+            
+            <ul id="nav-list">
+                <li><a href="catalogos.html">Productos</a></li>
+                <li><a href="financiamiento.html">Financiamiento</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="contacto-page-main" id="main">
+        <div class="contacto-container">
+            
+            <section class="info-contacto-col reveal">
+                <h2>¿Listo para llevar potencia al campo? <br><span>Contáctanos hoy mismo</span></h2>
+                <p class="contacto-desc">Nuestro equipo de asesores e ingenieros de servicio está listo para brindarte atención personalizada, cotizaciones formales y soporte inmediato en cualquiera de las zonas productivas de Venezuela.</p>
+                
+                <div class="canales-directos">
+                    <div class="canal-item">
+                        <div class="canal-icon icon-verde">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div class="canal-text">
+                            <h3>Atención Telefónica</h3>
+                            <p><a href="tel:+584228331171">+58 422-8331171</a></p>
+                        </div>
+                    </div>
+
+                    <div class="canal-item">
+                        <div class="canal-icon icon-amarillo">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div class="canal-text">
+                            <h3>Correo Electrónico</h3>
+                            <p><a href="mailto:ventas@agropower.com">ventas@agropower.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="canal-item">
+                        <div class="canal-icon icon-verde" style="background-color: rgba(37, 211, 102, 0.1); color: #25d366;">
+                            <i data-lucide="message-square"></i>
+                        </div>
+                        <div class="canal-text">
+                            <h3>Canal WhatsApp</h3>
+                            <p><a href="https://wa.me/+584228331171" target="_blank">Atención Inmediata 24/7</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-card reveal" id="contacto-form-section">
+                <h2>Solicitud de Cotización</h2>
+                <p class="form-subtitle">Completa el formulario y un especialista se comunicará contigo en menos de 2 horas hábiles.</p>
+                
+                <form action="https://formsubmit.co/servicio@agropowervenezuela.com" method="POST">
+                    
+                    <input type="hidden" name="_subject" value="Nueva Solicitud de Cotización desde la Web!">
+                    <input type="hidden" name="_replyto">
+                    <input type="hidden" name="_honeypot" style="display:none"> <div class="form-group">
+                        <label for="nombre">Nombre Completo / Empresa</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="Ej. Juan Pérez / Agropecuaria El Hato C.A.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico</label>
+                        <input type="email" id="correo" name="correo" class="form-control" required placeholder="Ej. contacto@tuempresa.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Número de Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" class="form-control" required placeholder="Ej. +58 414-1234567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maquinaria">Maquinaria de Interés</label>
+                        <select id="maquinaria" name="maquinaria" class="form-control" required>
+                            <option value="" disabled selected>Selecciona una opción...</option>
+                            <option value="Tractor 130 HP con Cabina">Tractor Agropower 130 HP (Con Cabina Climatizada)</option>
+                            <option value="Tractor 130 HP Abierto">Tractor Agropower 130 HP (Techo Abierto)</option>
+                            <option value="Tractor 90 HP">Tractor Agropower 90 HP</option>
+                            <option value="Tractor 50 HP">Tractor Agropower 50 HP</option>
+                            <option value="Repuestos o Servicio Técnico">Solicitud de Repuestos / Servicio Técnico</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Detalles de su Requerimiento</label>
+                        <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Escriba aquí los detalles de su terreno, implementos que planea usar o dudas técnicas..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-submit">
+                        <i data-lucide="send"></i> Enviar Solicitud Comercial
+                    </button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column brand-column">
+                <a href="index2.html#inicio" class="logo-container-footer" style="text-decoration: none; color: inherit;">
+                    <img src="Img/Isotipo - Blanco (Diapo Negativo).png" alt="Logo Agropower" class="logo-img-footer">
+                    <span class="logo-text-footer">Agro<span>power</span></span>
+                </a>
+                <p class="brand-desc">Distribuidores oficiales de maquinaria agrícola de alta potencia, rendimiento superior y máxima durabilidad.</p>
+            </div>
+
+            <div class="footer-column links-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="catalogos.html">Catálogos</a></li>
+                    <li><a href="index.html#presencia">Ubicación</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column contact-column">
+                <h3>Contacto Principal</h3>
+                <div class="contact-item">
+                    <i data-lucide="map-pin" size="16"></i>
+                    <span>Avenida Alirio Ugarte Pelayo, Maturín, Monagas.</span>
+                </div>
+                <div class="contact-item">
+                    <i data-lucide="phone" size="16"></i>
+                    <span>+58 422-8331171</span>
+                </div>
+                <div class="contact-item">
+                    <i data-lucide="mail" size="16"></i>
+                    <span>servicio@agropowervenezuela.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copy">© 2026 Agropower C.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
